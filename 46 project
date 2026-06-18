@@ -1,0 +1,27 @@
+import pyautogui
+import time
+print("Screenshot Tool")
+while True:
+    filename = input(
+        "Enter screenshot name (or exit): "
+    )
+    if filename.lower() == "exit":
+        print("Goodbye!")
+        break
+    try:
+        print(
+            "Taking screenshot in 3 seconds..."
+        )
+        time.sleep(3)
+        screenshot = pyautogui.screenshot()
+        screenshot.save(
+            filename + ".png"
+        )
+        print(
+            "Screenshot saved successfully!"
+        )
+    except Exception as e:
+        print(
+            "Error:",
+            e
+        )
